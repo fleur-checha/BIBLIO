@@ -1,0 +1,24 @@
+{% extends"base.html.twig" %}
+
+{% block title %}Livre - {{ parent() }}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/css/mystyleForAccueil.css">
+{% endblock %}
+
+{% block body %}
+
+    <h1>Detail du livre :<a href="?controller=Livre&action=showOneBook&param={{ livre.id }}">{{ livre.titre }}</a></h1>
+
+    <form name="Detail_Livre" method="post" action="?controller=Livre&action=ShowOneBook">
+        <input id="Titre" type="text" name="titre" placeholder="Titre" value="{{ livre.titre }}"><br>
+        <input id="Auteur" type="text" name="auteur" placeholder="Auteur" value="{{ livre.auteur }}"><br>
+        <input id="Editeur" type="text" name="editeur" placeholder="Editeur" value="{{ livre.editeur }}"><br>
+        <input id="Nb_pages" type="number" name="nb_pages" placeholder="Nombre de pages" value="{{ livre.nb_pages }}"><br>
+        <input id="Date_publication" type="date" name="date_publication" placeholder="Date de Publication" value="{{ livre.date_publication }}"><br>
+        <input id="Livre_image" type="text" name="livre_image" placeholder="lien image" value ="{{ livre.livre_image }}">
+        <button  onclick="deleteConfirm({{ livre.id }})" id="deleteButton">Supprimer</button>
+        <input type="submit" value="modifier">
+    </form>
+{% endblock %}
+
