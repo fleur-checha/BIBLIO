@@ -24,6 +24,15 @@ class LivreController extends AbstractController
         ]);
     }
 
+    public function ListAdmin(){
+        $livre = new Livre();
+        $livreList = $livre->SQLGetAll(BDD::getInstance());
+
+        return $this->twig->render("listAdmin.html.twig",[
+            "livreList" => $livreList
+        ]);
+    }
+
     public function GetOne($id){
             $livre = new Livre();
             $livreOne = $livre->SQLGetOne(BDD::getInstance(), $id);

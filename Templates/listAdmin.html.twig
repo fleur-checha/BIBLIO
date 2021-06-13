@@ -1,4 +1,4 @@
-{% extends"../base.html.twig" %}
+{% extends"base.html.twig" %}
 
 {% block title %}Livre - {{ parent() }}{% endblock %}
 
@@ -8,23 +8,23 @@
 
 {% block body %}
 
- {% if livreList is defined %}
+    {% if livreList is defined %}
         <h1>Liste des Livres</h1>
         {% for book in livreList %}
             <p>livre {{ book.titre }}</p>
             <p>Auteur{{ book.auteur }}</p>
             <button onclick="window.location.href= '?controller=Livre&action=getone&param={{ book.id }}'">Detail</button>
             <button onclick="window.location.href= '?controller=Livre&action=updatebook&param={{ book.id }}'">A Modifier</button>
-<form name="Detail_Livre" method="post" action="?controller=Livre&action=deleteBook&param={{ book.id }}">
-    <button  onclick="deleteConfirm({{ livre.id }})" id="deleteButton">Supprimer</button>
-</form>
+            <form name="Detail_Livre" method="post" action="?controller=Livre&action=deleteBook&param={{ book.id }}">
+                <button  onclick="deleteConfirm({{ livre.id }})" id="deleteButton">Supprimer</button>
+            </form>
 
             <hr>
         {% endfor %}
     {% else %}
         <h1>Détail de {{ lIVRE.TITRE }}</h1>
         <h2>{{ Livre.AUTEUR }}</h2>
- {% endif %}
+    {% endif %}
 
 {% endblock %}
 {#        <div class="container">#}

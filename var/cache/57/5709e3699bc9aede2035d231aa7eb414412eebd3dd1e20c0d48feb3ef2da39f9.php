@@ -34,13 +34,13 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
     protected function doGetParent(array $context)
     {
         // line 1
-        return "../base.html.twig";
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("../base.html.twig", "accueil.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "accueil.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -144,7 +144,7 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
 
     public function getSourceContext()
     {
-        return new Source("{% extends\"../base.html.twig\" %}
+        return new Source("{% extends\"base.html.twig\" %}
 
 {% block title %}Livre - {{ parent() }}{% endblock %}
 
