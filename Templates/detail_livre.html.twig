@@ -8,17 +8,34 @@
 
 {% block body %}
 
-    <h1>Detail du livre :<a href="?controller=Livre&action=showOneBook&param={{ livre.id }}">{{ livre.titre }}</a></h1>
+{#    <h1>Detail du livre :<a href="?controller=Livre&action=getOne&param={{ livre.id }}">{{ livre.titre }}</a></h1>#}
+    <h1>{{ livre.titre }}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="/images/{{ livre.livre_image }}" alt="Couverture du Livre {{ livre.titre }}">
+        </div>
+        <div class="col-6">
+        <p> Titre du livre : {{ livre.titre }}</p>
+        <p> Auteur : {{ livre.auteur }}</p>
+        <p>Editeur : {{ livre.editeur }}</p>
+        <p>Nb_pages : {{ livre.nb_pages }}</p>
+        <p>Date de publication : {{ livre.date_publication }} </p>
+        </div>
 
-    <form name="Detail_Livre" method="post" action="?controller=Livre&action=ShowOneBook">
-        <input id="Titre" type="text" name="titre" placeholder="Titre" value="{{ livre.titre }}"><br>
-        <input id="Auteur" type="text" name="auteur" placeholder="Auteur" value="{{ livre.auteur }}"><br>
-        <input id="Editeur" type="text" name="editeur" placeholder="Editeur" value="{{ livre.editeur }}"><br>
-        <input id="Nb_pages" type="number" name="nb_pages" placeholder="Nombre de pages" value="{{ livre.nb_pages }}"><br>
-        <input id="Date_publication" type="date" name="date_publication" placeholder="Date de Publication" value="{{ livre.date_publication }}"><br>
-        <input id="Livre_image" type="text" name="livre_image" placeholder="lien image" value ="{{ livre.livre_image }}">
-        <button  onclick="deleteConfirm({{ livre.id }})" id="deleteButton">Supprimer</button>
-        <input type="submit" value="modifier">
-    </form>
+{#    <form name="Detail_Livre" method="post" action="?controller=Livre&action=deleteBook&param={{ livre.id }}">#}
+{#        <input id="Titre" type="text" name="titre" placeholder="Titre" value="{{ livre.titre }}"><br>#}
+{#        <input id="Auteur" type="text" name="auteur" placeholder="Auteur" value="{{ livre.auteur }}"><br>#}
+{#        <input id="Editeur" type="text" name="editeur" placeholder="Editeur" value="{{ livre.editeur }}"><br>#}
+{#        <input id="Nb_pages" type="number" name="nb_pages" placeholder="Nombre de pages" value="{{ livre.nb_pages }}"><br>#}
+{#        <input id="Date_publication" type="date" name="date_publication" placeholder="Date de Publication" value="{{ livre.date_publication }}"><br>#}
+{#        <input id="Livre_image" type="text" name="livre_image" placeholder="lien image" value ="{{ livre.livre_image }}">#}
+{#        <button  onclick="deleteConfirm({{ livre.id }})" id="deleteButton">Supprimer</button>#}
+{#        <input type="submit" value="modifier">#}
+{#    </form>#}
+{% endblock %}
+
+{% block javascript %}
+    <script src="/assets/js/detail_livre.js"></script>
 {% endblock %}
 

@@ -77,8 +77,9 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
                 </li>
             </ul>
             <form class=\"d-flex\">
-                <input class=\"form-control me-sm-2\" type=\"text\" placeholder=\"Search\">
-                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
+";
+        // line 36
+        echo "                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '?controller=User&action=LoginUser'\">Login</button>
             </form>
         </div>
     </div>
@@ -86,17 +87,17 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
 <div class=\"container\">
 
     ";
-        // line 42
-        $this->displayBlock('body', $context, $blocks);
         // line 43
+        $this->displayBlock('body', $context, $blocks);
+        // line 44
         echo "
 </div>
 
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script>
 ";
-        // line 47
-        $this->displayBlock('script', $context, $blocks);
         // line 48
+        $this->displayBlock('script', $context, $blocks);
+        // line 49
         echo "</body>
 </html>";
     }
@@ -114,13 +115,13 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
         echo "BIBLIOTHEQUE ";
     }
 
-    // line 42
+    // line 43
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 47
+    // line 48
     public function block_script($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -133,7 +134,7 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
 
     public function getDebugInfo()
     {
-        return array (  124 => 47,  118 => 42,  111 => 11,  105 => 9,  100 => 48,  98 => 47,  92 => 43,  90 => 42,  56 => 11,  53 => 10,  51 => 9,  41 => 1,);
+        return array (  125 => 48,  119 => 43,  112 => 11,  106 => 9,  101 => 49,  99 => 48,  93 => 44,  91 => 43,  82 => 36,  56 => 11,  53 => 10,  51 => 9,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -171,8 +172,9 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
                 </li>
             </ul>
             <form class=\"d-flex\">
-                <input class=\"form-control me-sm-2\" type=\"text\" placeholder=\"Search\">
-                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
+{#                <input class=\"form-control me-sm-2\" type=\"text\" placeholder=\"Login\">#}
+{#                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Login</button>#}
+                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '?controller=User&action=LoginUser'\">Login</button>
             </form>
         </div>
     </div>

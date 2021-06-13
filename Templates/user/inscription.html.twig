@@ -1,0 +1,44 @@
+{% extends"base.html.twig" %}
+
+{% block title %}User - {{ parent() }}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/css/mystyleForAccueil.css">
+{% endblock %}
+
+{% block body %}
+    <h2>Inscription</h2>
+    <form name="AddUser" method="post" action="?controller=User&action=AddUser">
+        <table>
+            <tr>
+                <td ><label for="email"> Email : </label></td>
+                <td><input id="email" type="email" name="mail" placeholder="votre mail" required></td>
+            </tr>
+            <tr>
+            <td><label for="emailCheck"> Confirmation du mail : </label></td>
+            <td><input id="emailCheck" type="email" name="mailCheck" placeholder="confirmez votre mail" required></td>
+            </tr>
+            <tr>
+                <td><label for="password"> Mot de Passe </label></td>
+                <td><input id="password" type="password" name="password" placeholder="votre mot de passe" required></td>
+            </tr>
+            <tr>
+                <td><label for=""passwordCheck> Vérification Mot de Passe</label></td>
+                 <td> <input id="passwordCheck" type="password" name="passwordCheck" placeholder="confirmez le mot de passe" required></td>
+            </tr>
+            <td>
+        <button type="submit">Inscription</button>
+            </td>
+        </table>
+    </form>
+    <button onclick="window.location.href= '?controller=user&action=adduser'">Créer un login</button>
+
+
+
+
+{% endblock %}
+
+    {% block javascript %}
+    <script src="/assets/js/detail_livre.js"></script>
+    {% endblock %}
+

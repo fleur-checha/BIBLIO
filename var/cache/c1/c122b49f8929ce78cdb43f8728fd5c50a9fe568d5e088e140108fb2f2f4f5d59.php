@@ -28,6 +28,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
             'title' => [$this, 'block_title'],
             'css' => [$this, 'block_css'],
             'body' => [$this, 'block_body'],
+            'javascript' => [$this, 'block_javascript'],
         ];
     }
 
@@ -67,44 +68,53 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
         $macros = $this->macros;
         // line 10
         echo "
-    <h1>Detail du livre :<a href=\"?controller=Livre&action=showOneBook&param=";
-        // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "id", [], "any", false, false, false, 11), "html", null, true);
-        echo "\">";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 11), "html", null, true);
-        echo "</a></h1>
-
-    <form name=\"Detail_Livre\" method=\"post\" action=\"?controller=Livre&action=ShowOneBook\">
-        <input id=\"Titre\" type=\"text\" name=\"titre\" placeholder=\"Titre\" value=\"";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 14), "html", null, true);
-        echo "\"><br>
-        <input id=\"Auteur\" type=\"text\" name=\"auteur\" placeholder=\"Auteur\" value=\"";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "auteur", [], "any", false, false, false, 15), "html", null, true);
-        echo "\"><br>
-        <input id=\"Editeur\" type=\"text\" name=\"editeur\" placeholder=\"Editeur\" value=\"";
+";
+        // line 12
+        echo "    <h1>";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 12), "html", null, true);
+        echo "</h1>
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col-6\">
+            <img src=\"/images/";
         // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "editeur", [], "any", false, false, false, 16), "html", null, true);
-        echo "\"><br>
-        <input id=\"Nb_pages\" type=\"number\" name=\"nb_pages\" placeholder=\"Nombre de pages\" value=\"";
-        // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "nb_pages", [], "any", false, false, false, 17), "html", null, true);
-        echo "\"><br>
-        <input id=\"Date_publication\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "date_publication", [], "any", false, false, false, 18), "html", null, true);
-        echo "\"><br>
-        <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value =\"";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "livre_image", [], "any", false, false, false, 19), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "livre_image", [], "any", false, false, false, 16), "html", null, true);
+        echo "\" alt=\"Couverture du Livre ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 16), "html", null, true);
         echo "\">
-        <button  onclick=\"deleteConfirm(";
+        </div>
+        <div class=\"col-6\">
+        <p> Titre du livre : ";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 19), "html", null, true);
+        echo "</p>
+        <p> Auteur : ";
         // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "id", [], "any", false, false, false, 20), "html", null, true);
-        echo ")\" id=\"deleteButton\">Supprimer</button>
-        <input type=\"submit\" value=\"modifier\">
-    </form>
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "auteur", [], "any", false, false, false, 20), "html", null, true);
+        echo "</p>
+        <p>Editeur : ";
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "editeur", [], "any", false, false, false, 21), "html", null, true);
+        echo "</p>
+        <p>Nb_pages : ";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "nb_pages", [], "any", false, false, false, 22), "html", null, true);
+        echo "</p>
+        <p>Date de publication : ";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "date_publication", [], "any", false, false, false, 23), "html", null, true);
+        echo " </p>
+        </div>
+
+";
+    }
+
+    // line 38
+    public function block_javascript($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 39
+        echo "    <script src=\"/assets/js/detail_livre.js\"></script>
 ";
     }
 
@@ -120,7 +130,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
 
     public function getDebugInfo()
     {
-        return array (  104 => 20,  100 => 19,  96 => 18,  92 => 17,  88 => 16,  84 => 15,  80 => 14,  72 => 11,  69 => 10,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
+        return array (  117 => 39,  113 => 38,  105 => 23,  101 => 22,  97 => 21,  93 => 20,  89 => 19,  81 => 16,  73 => 12,  70 => 10,  66 => 9,  61 => 6,  57 => 5,  49 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -135,18 +145,35 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
 
 {% block body %}
 
-    <h1>Detail du livre :<a href=\"?controller=Livre&action=showOneBook&param={{ livre.id }}\">{{ livre.titre }}</a></h1>
+{#    <h1>Detail du livre :<a href=\"?controller=Livre&action=getOne&param={{ livre.id }}\">{{ livre.titre }}</a></h1>#}
+    <h1>{{ livre.titre }}</h1>
+<div class=\"container\">
+    <div class=\"row\">
+        <div class=\"col-6\">
+            <img src=\"/images/{{ livre.livre_image }}\" alt=\"Couverture du Livre {{ livre.titre }}\">
+        </div>
+        <div class=\"col-6\">
+        <p> Titre du livre : {{ livre.titre }}</p>
+        <p> Auteur : {{ livre.auteur }}</p>
+        <p>Editeur : {{ livre.editeur }}</p>
+        <p>Nb_pages : {{ livre.nb_pages }}</p>
+        <p>Date de publication : {{ livre.date_publication }} </p>
+        </div>
 
-    <form name=\"Detail_Livre\" method=\"post\" action=\"?controller=Livre&action=ShowOneBook\">
-        <input id=\"Titre\" type=\"text\" name=\"titre\" placeholder=\"Titre\" value=\"{{ livre.titre }}\"><br>
-        <input id=\"Auteur\" type=\"text\" name=\"auteur\" placeholder=\"Auteur\" value=\"{{ livre.auteur }}\"><br>
-        <input id=\"Editeur\" type=\"text\" name=\"editeur\" placeholder=\"Editeur\" value=\"{{ livre.editeur }}\"><br>
-        <input id=\"Nb_pages\" type=\"number\" name=\"nb_pages\" placeholder=\"Nombre de pages\" value=\"{{ livre.nb_pages }}\"><br>
-        <input id=\"Date_publication\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"{{ livre.date_publication }}\"><br>
-        <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value =\"{{ livre.livre_image }}\">
-        <button  onclick=\"deleteConfirm({{ livre.id }})\" id=\"deleteButton\">Supprimer</button>
-        <input type=\"submit\" value=\"modifier\">
-    </form>
+{#    <form name=\"Detail_Livre\" method=\"post\" action=\"?controller=Livre&action=deleteBook&param={{ livre.id }}\">#}
+{#        <input id=\"Titre\" type=\"text\" name=\"titre\" placeholder=\"Titre\" value=\"{{ livre.titre }}\"><br>#}
+{#        <input id=\"Auteur\" type=\"text\" name=\"auteur\" placeholder=\"Auteur\" value=\"{{ livre.auteur }}\"><br>#}
+{#        <input id=\"Editeur\" type=\"text\" name=\"editeur\" placeholder=\"Editeur\" value=\"{{ livre.editeur }}\"><br>#}
+{#        <input id=\"Nb_pages\" type=\"number\" name=\"nb_pages\" placeholder=\"Nombre de pages\" value=\"{{ livre.nb_pages }}\"><br>#}
+{#        <input id=\"Date_publication\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"{{ livre.date_publication }}\"><br>#}
+{#        <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value =\"{{ livre.livre_image }}\">#}
+{#        <button  onclick=\"deleteConfirm({{ livre.id }})\" id=\"deleteButton\">Supprimer</button>#}
+{#        <input type=\"submit\" value=\"modifier\">#}
+{#    </form>#}
+{% endblock %}
+
+{% block javascript %}
+    <script src=\"/assets/js/detail_livre.js\"></script>
 {% endblock %}
 
 ", "detail_livre.html.twig", "C:\\xampp2\\htdocs\\BIBLIO\\Templates\\detail_livre.html.twig");

@@ -3,7 +3,6 @@
 namespace src\Controller;
 
 use src\Model\Livre;
-use src\Model\InfoMovie;
 use src\Model\BDD;
 use src\Model\User;
 
@@ -12,7 +11,7 @@ class LivreController extends AbstractController
 
     public function index()
     {
-
+        //En cas de problème, on redirige vers l'accueil
         echo "Accueil du site BIBLIOTHEQUE";
     }
 
@@ -106,11 +105,11 @@ class LivreController extends AbstractController
         $livre = new Livre();
         $response = $livre->SQLDeleteBook(BDD::getInstance(), $id);
         if ($response[0]){
-        echo "$response[1]";
+//        echo "$response[1]";
+             header("location:/index.php");
 
         } else {
              echo "Une erreur c'est produite : ${response[1]}";
         }
-//        header("location:/index.php?controller=Livre&action=List");
         }
         }

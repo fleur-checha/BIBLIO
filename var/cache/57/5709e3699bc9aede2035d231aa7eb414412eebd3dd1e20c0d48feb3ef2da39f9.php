@@ -34,13 +34,13 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "../base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("base.html.twig", "accueil.html.twig", 1);
+        $this->parent = $this->loadTemplate("../base.html.twig", "accueil.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -67,7 +67,7 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
         $macros = $this->macros;
         // line 10
         echo "
- ";
+    ";
         // line 11
         if (array_key_exists("livreList", $context)) {
             // line 12
@@ -85,26 +85,44 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
                 // line 15
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "auteur", [], "any", false, false, false, 15), "html", null, true);
                 echo "</p>
+            <button onclick=\"window.location.href= '?controller=Livre&action=getone&param=";
+                // line 16
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "id", [], "any", false, false, false, 16), "html", null, true);
+                echo "'\">Detail</button>
+            <button onclick=\"window.location.href= '?controller=Livre&action=updatebook&param=";
+                // line 17
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "id", [], "any", false, false, false, 17), "html", null, true);
+                echo "'\">A Modifier</button>
+            <form name=\"Detail_Livre\" method=\"post\" action=\"?controller=Livre&action=deleteBook&param=";
+                // line 18
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "id", [], "any", false, false, false, 18), "html", null, true);
+                echo "\">
+                <button  onclick=\"deleteConfirm(";
+                // line 19
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "id", [], "any", false, false, false, 19), "html", null, true);
+                echo ")\" id=\"deleteButton\">Supprimer</button>
+            </form>
+
             <hr>
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 18
+            // line 24
             echo "    ";
         } else {
-            // line 19
+            // line 25
             echo "        <h1>Détail de ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["lIVRE"] ?? null), "TITRE", [], "any", false, false, false, 19), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["lIVRE"] ?? null), "TITRE", [], "any", false, false, false, 25), "html", null, true);
             echo "</h1>
         <h2>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Livre"] ?? null), "AUTEUR", [], "any", false, false, false, 20), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Livre"] ?? null), "AUTEUR", [], "any", false, false, false, 26), "html", null, true);
             echo "</h2>
- ";
+    ";
         }
-        // line 22
+        // line 28
         echo "
 ";
     }
@@ -121,12 +139,12 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
 
     public function getDebugInfo()
     {
-        return array (  108 => 22,  103 => 20,  98 => 19,  95 => 18,  86 => 15,  81 => 14,  77 => 13,  74 => 12,  72 => 11,  69 => 10,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
+        return array (  126 => 28,  121 => 26,  116 => 25,  113 => 24,  102 => 19,  98 => 18,  94 => 17,  90 => 16,  86 => 15,  81 => 14,  77 => 13,  74 => 12,  72 => 11,  69 => 10,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends\"base.html.twig\" %}
+        return new Source("{% extends\"../base.html.twig\" %}
 
 {% block title %}Livre - {{ parent() }}{% endblock %}
 
@@ -136,17 +154,23 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
 
 {% block body %}
 
- {% if livreList is defined %}
+    {% if livreList is defined %}
         <h1>Liste des Livres</h1>
         {% for book in livreList %}
             <p>livre {{ book.titre }}</p>
             <p>Auteur{{ book.auteur }}</p>
+            <button onclick=\"window.location.href= '?controller=Livre&action=getone&param={{ book.id }}'\">Detail</button>
+            <button onclick=\"window.location.href= '?controller=Livre&action=updatebook&param={{ book.id }}'\">A Modifier</button>
+            <form name=\"Detail_Livre\" method=\"post\" action=\"?controller=Livre&action=deleteBook&param={{ book.id }}\">
+                <button  onclick=\"deleteConfirm({{ livre.id }})\" id=\"deleteButton\">Supprimer</button>
+            </form>
+
             <hr>
         {% endfor %}
     {% else %}
         <h1>Détail de {{ lIVRE.TITRE }}</h1>
         <h2>{{ Livre.AUTEUR }}</h2>
- {% endif %}
+    {% endif %}
 
 {% endblock %}
 {#        <div class=\"container\">#}
