@@ -56,7 +56,6 @@ class User
             ]);
 
             $data = $requete->fetch(\PDO::FETCH_ASSOC);
-
             if (password_verify($this->getPassword(),trim($data["password"]))){
                 //Si tous se passe bien return True
                 $this->setIdUser($data["id_user"]);

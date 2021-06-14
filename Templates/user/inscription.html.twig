@@ -3,42 +3,36 @@
 {% block title %}User - {{ parent() }}{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="/assets/css/mystyleForAccueil.css">
+    <link rel="stylesheet" href="/assets/css/mystyleForUser.css">
 {% endblock %}
 
 {% block body %}
     <h2>Inscription</h2>
     <form name="AddUser" method="post" action="?controller=User&action=AddUser">
-        <table>
-            <tr>
-                <td ><label for="email"> Email : </label></td>
-                <td><input id="email" type="email" name="mail" placeholder="votre mail" required></td>
-            </tr>
-            <tr>
-            <td><label for="emailCheck"> Confirmation du mail : </label></td>
-            <td><input id="emailCheck" type="email" name="mailCheck" placeholder="confirmez votre mail" required></td>
-            </tr>
-            <tr>
-                <td><label for="password"> Mot de Passe </label></td>
-                <td><input id="password" type="password" name="password" placeholder="votre mot de passe" required></td>
-            </tr>
-            <tr>
-                <td><label for=""passwordCheck> Vérification Mot de Passe</label></td>
-                 <td> <input id="passwordCheck" type="password" name="passwordCheck" placeholder="confirmez le mot de passe" required></td>
-            </tr>
-            <td>
-        <button type="submit">Inscription</button>
-            </td>
-        </table>
+        <fieldset>
+            <div class="form-group">
+                <label for="email" class="form-label mt-4">Email</label>
+                <input type="email" name="mail" class="form-control" id="email" aria-describedby="emailHelp" placeholder="email" required>
+            </div>
+            <div class="form-group">
+                <label for="emailCheck" class="form-label mt-4">Vérification du mail</label>
+                <input type="email" name="mailCheck" class="form-control" id="emailCheck" aria-describedby="emailHelp" placeholder="Confirmez votre email" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label mt-4">Mot de Passe</label>
+                <input type="password" name="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="mot de passe"required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="passwordCheck" class="form-label mt-4">Vérification mot de passe</label>
+                <input type="password" name="passwordCheck" class="form-control" id="passwordCheck" aria-describedby="emailHelp" placeholder="Confirmez votre mot de passe" required>
+            </div>
+            <button type="submit" id="buttonInscription" class="btn btn-primary">Inscription</button>
+        </fieldset>
     </form>
-    <button onclick="window.location.href= '?controller=user&action=adduser'">Créer un login</button>
-
-
-
-
 {% endblock %}
 
-    {% block javascript %}
-    <script src="/assets/js/detail_livre.js"></script>
-    {% endblock %}
+{#    {% block javascript %}#}
+{#    <script src="/assets/js/detail_livre.js"></script>#}
+{#    {% endblock %}#}
 

@@ -73,31 +73,52 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
                     </a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Livres</a>
-                </li>
+                    ";
+        // line 30
+        if ((($context["session"] ?? null) == 0)) {
+            // line 31
+            echo "                    <a class=\"nav-link\" href=\"?controller=livre&action=list\">Livres</a>
+                    ";
+        } else {
+            // line 33
+            echo "                    <a class=\"nav-link\" href=\"?controller=livre&action=listAdmin\">Livres Admin</a>
+                    ";
+        }
+        // line 35
+        echo "                </li>
             </ul>
-            <form class=\"d-flex\">
 ";
-        // line 36
-        echo "                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '?controller=User&action=LoginUser'\">Login</button>
-            </form>
-        </div>
+        // line 40
+        echo "                ";
+        if ((($context["isOnline"] ?? null) == false)) {
+            // line 41
+            echo "                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '/?controller=User&action=LoginUser'\">Login</button>
+                ";
+        } else {
+            // line 43
+            echo "                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '/?controller=User&action=LogoutUser'\">Logout</button>
+                ";
+        }
+        // line 45
+        echo "            ";
+        // line 46
+        echo "        </div>
     </div>
 </nav>
 <div class=\"container\">
 
     ";
-        // line 43
+        // line 51
         $this->displayBlock('body', $context, $blocks);
-        // line 44
+        // line 52
         echo "
 </div>
 
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script>
 ";
-        // line 48
+        // line 56
         $this->displayBlock('script', $context, $blocks);
-        // line 49
+        // line 57
         echo "</body>
 </html>";
     }
@@ -115,13 +136,13 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
         echo "BIBLIOTHEQUE ";
     }
 
-    // line 43
+    // line 51
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 48
+    // line 56
     public function block_script($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -132,9 +153,14 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  125 => 48,  119 => 43,  112 => 11,  106 => 9,  101 => 49,  99 => 48,  93 => 44,  91 => 43,  82 => 36,  56 => 11,  53 => 10,  51 => 9,  41 => 1,);
+        return array (  146 => 56,  140 => 51,  133 => 11,  127 => 9,  122 => 57,  120 => 56,  114 => 52,  112 => 51,  105 => 46,  103 => 45,  99 => 43,  95 => 41,  92 => 40,  88 => 35,  84 => 33,  80 => 31,  78 => 30,  56 => 11,  53 => 10,  51 => 9,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -168,14 +194,22 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
                     </a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Livres</a>
+                    {% if session  == 0 %}
+                    <a class=\"nav-link\" href=\"?controller=livre&action=list\">Livres</a>
+                    {% else %}
+                    <a class=\"nav-link\" href=\"?controller=livre&action=listAdmin\">Livres Admin</a>
+                    {% endif %}
                 </li>
             </ul>
-            <form class=\"d-flex\">
+{#            <form class=\"d-flex\">#}
 {#                <input class=\"form-control me-sm-2\" type=\"text\" placeholder=\"Login\">#}
 {#                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Login</button>#}
-                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '?controller=User&action=LoginUser'\">Login</button>
-            </form>
+                {% if isOnline == false %}
+                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '/?controller=User&action=LoginUser'\">Login</button>
+                {% else %}
+                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '/?controller=User&action=LogoutUser'\">Logout</button>
+                {% endif %}
+            {#            </form>#}
         </div>
     </div>
 </nav>

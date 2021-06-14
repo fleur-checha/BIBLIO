@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* accueil.html.twig */
+/* list.html.twig */
 class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be235bfda extends Template
 {
     private $source;
@@ -40,7 +40,7 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("base.html.twig", "accueil.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "list.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -129,7 +129,7 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
 
     public function getTemplateName()
     {
-        return "accueil.html.twig";
+        return "list.html.twig";
     }
 
     public function isTraitable()
@@ -292,6 +292,6 @@ class __TwigTemplate_ac639ddf68ae221b66be7f95cd24409eb921e720542fdb97d91b1d1be23
 {#<script src=\"/assets/js/listMovie.js\"></script>#}
 {#<script src=\"/assets/js/listInfoMovie.js\"></script>#}
 {#{% endblock %}#}
-", "accueil.html.twig", "C:\\xampp2\\htdocs\\BIBLIO\\Templates\\accueil.html.twig");
+", "list.html.twig", "C:\\xampp2\\htdocs\\BIBLIO\\Templates\\list.html.twig");
     }
 }

@@ -18,7 +18,6 @@ class UserController extends AbstractController
 
     //Fonction Login
     public function LoginUser(){
-
         if (isset($_POST["mail"])){
             //Si tentative de connexion
             $val = new User();
@@ -27,11 +26,16 @@ class UserController extends AbstractController
 
             $response = $val->SQLLoginUser(BDD::getInstance());
             if ($response[0]){
-                //echo $response[1];
+//                echo $response[0];
+                echo $response[1];
                 $_SESSION["mail"] = $val->getMail();
                 $_SESSION["id_user"] = $val->getIdUser();
                 $_SESSION["role"] = $val->getRole();
+                var_dump($_SESSION["role"]);
+                var_dump($_SESSION["mail"]);
+                var_dump($_SESSION["id_user"]);
 
+                die;
                 header("location:/");
 
             } else {
@@ -39,7 +43,7 @@ class UserController extends AbstractController
             }
 
         } elseif(isset($_SESSION["mail"]) && empty($_SESSION["mail"]) == false) {
-            //Si l'utilisateur est déjà connecté, on le renvoi vers l'accueil
+            //Si l'utilisateur est déjà connecté, on le renvoie vers l'accueil
             try {
                 //echo $this->twig->render("base.html.twig", []);
                 header("location:/");
@@ -49,9 +53,9 @@ class UserController extends AbstractController
         } else {
             //Si pas connecté
             try {
-                echo $this->twig->render("user/connexion.html.twig", []);
+                return $this->twig->render("user/connexion.html.twig", []);
             } catch (LoaderError $e) {
-                echo $e->getMessage();
+                return $e->getMessage();
             }
         }
     }
@@ -102,13 +106,14 @@ class UserController extends AbstractController
             //Verifie si les passwords sont bien identiques
             if ($_POST["password"] != $_POST["passwordCheck"]){
                 echo '<script> alert("Les mots de passe ne correspondent pas !") </script>';
-//                return $this->twig->render("user/connection.html.twig");TODO// FAIRE LA REDIRECTION
+                return $this->twig->render("user/inscription.html.twig");
                 exit();
             }
 
             //Vérifie si les mails sont bien identiques
             if ($_POST["mail"] != $_POST["mailCheck"]) {
                 echo '<script> alert("Les adresses mails ne correspondent pas !") </script>';
+                return $this->twig->render("user/inscription.html.twig");
                 exit();
             }
 //            header("location:/index.php");TODO // FAIRE LA REDIRECTION
@@ -120,7 +125,7 @@ class UserController extends AbstractController
             $response = $val->SQLAddUser(BDD::getInstance());
             if ($response[0]) {
                 echo "Inscription réussi";
-//                header("location:/index.php");TODO// FAIRE LA REDIRECTION
+                return $this->twig->render("list.html.twig");
             } else {
                 echo "Une erreur c'est produite : ${response}";
             }

@@ -27,14 +27,22 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Livres</a>
+                    {% if session  == 0 %}
+                    <a class="nav-link" href="?controller=livre&action=list">Livres</a>
+                    {% else %}
+                    <a class="nav-link" href="?controller=livre&action=listAdmin">Livres Admin</a>
+                    {% endif %}
                 </li>
             </ul>
-            <form class="d-flex">
+{#            <form class="d-flex">#}
 {#                <input class="form-control me-sm-2" type="text" placeholder="Login">#}
 {#                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>#}
-                <button class="btn btn-secondary my-2 my-sm-0" onclick="window.location.href= '?controller=User&action=LoginUser'">Login</button>
-            </form>
+                {% if isOnline == false %}
+                <button class="btn btn-secondary my-2 my-sm-0" onclick="window.location.href= '/?controller=User&action=LoginUser'">Login</button>
+                {% else %}
+                <button class="btn btn-secondary my-2 my-sm-0" onclick="window.location.href= '/?controller=User&action=LogoutUser'">Logout</button>
+                {% endif %}
+            {#            </form>#}
         </div>
     </div>
 </nav>

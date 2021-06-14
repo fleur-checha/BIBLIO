@@ -1,5 +1,6 @@
 <?php
 
+
 namespace src\Controller;
 
 use src\Model\Livre;
@@ -19,8 +20,17 @@ class LivreController extends AbstractController
         $livre = new Livre();
         $livreList = $livre->SQLGetAll(BDD::getInstance());
 
-        return $this->twig->render("accueil.html.twig",[
-            "livreList" => $livreList
+        if(isset($_SESSION['role'])) {
+            $this->getTwig()->addGlobal('session', $_SESSION['role']);
+        }
+
+        $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
+
+
+        return $this->twig->render("list.html.twig",[
+            "livreList" => $livreList,
+            "isOnline" => isset($_SESSION['role']),
+            "session" => $session
         ]);
     }
 
@@ -38,12 +48,13 @@ class LivreController extends AbstractController
             $livreOne = $livre->SQLGetOne(BDD::getInstance(), $id);
 
         return $this->twig->render("detail_livre.html.twig",[
-            "livre" => $livreOne
+            "livre" => $livreOne,
+            "session"=> (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0
         ]);
 
-            if (!$livre){
-                header("location:/");
-            }
+//            if (!$livre){
+//                header("location:/");
+//            }
     }
 
     public function AddBook(){
