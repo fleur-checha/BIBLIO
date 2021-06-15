@@ -3,21 +3,49 @@
 {% block title %}Livre - {{ parent() }}{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="/assets/css/mystyleForAccueil.css">
+    <link rel="stylesheet" href="/assets/css/mystyleForBook.css">
 {% endblock %}
 
 {% block body %}
 {#    <h1>Modification de : <a href="?controller=Livre&action=UpdateBook&param={{ livre.id }}">{{ livre.titre }}</a></h1>#}
-    <h1>Modification de : {{ livre.titre }}</h1>
+    <h1>Modification de "{{ livre.titre }}"</h1>
 
     <form name="UpdateLivre" method="post" action="?controller=Livre&action=UpdateBook&param={{ livre.id }}">
-        <input id="Titre" type="text" name="titre" placeholder="Titre" value="{{ livre.titre }}">
-        <input id="Auteur" type="text" name="auteur" placeholder="Auteur" value="{{ livre.auteur }}">
-        <input id="Editeur" type="text" name="editeur" placeholder="Editeur" value="{{ livre.editeur }}">
-        <input id="Nb_pages" type="number" name="nb_pages" placeholder="Nombre de pages" value="{{ livre.nb_pages }}" >
-        <input id="Date_publication" type="date" name="date_publication" placeholder="Date de Publication" value="{{ livre.date_publication}}">
-        <input id="Livre_image" type="text" name="livre_image" placeholder="lien image" value="{{ livre_image}}">
-        <input type="submit" value="Modifier">
+        <fieldset>
+            <div class="form-group p-2">
+                <div class="col-lg-10">
+                    <input id="Titre" class="form-control" type="text" name="titre" placeholder="Titre" value="{{ livre.titre }}">
+                </div>
+            </div>
+            <div class="form-group p-2">
+                <div class="col-lg-10">
+                    <input id="Auteur" class="form-control" type="text" name="auteur" placeholder="Auteur" value="{{ livre.auteur }}">
+                </div>
+            </div>
+            <div class="form-group p-2">
+                <div class="col-lg-10">
+                    <input id="Editeur" class="form-control" type="text" name="editeur" placeholder="Editeur" value="{{ livre.editeur }}">
+                </div>
+            </div>
+            <div class="form-group p-2">
+                <div class="col-lg-10">
+                    <input id="Nb_pages" class="form-control" type="number" name="nb_pages" placeholder="Nombre de pages" value="{{ livre.nb_pages }}" >
+                </div>
+            </div>
+            <div class="form-group p-2">
+                <div class="col-lg-10">
+                    <input id="Date_publication" class="form-control" type="date" name="date_publication" placeholder="Date de Publication" value="{{ livre.date_publication}}">
+                </div>
+            </div>
+            <div class="form-group p-2">
+                <div class="col-lg-10">
+                    <input id="Livre_image" type="text" name="livre_image" placeholder="lien image" value="{{ livre_image}}">
+                </div>
+            </div>
+
+
+
+        <input type="submit" class="btn btn-primary m-2" value="Modifier">
     </form>
 {% endblock %}
 

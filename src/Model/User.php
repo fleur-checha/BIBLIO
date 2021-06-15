@@ -12,12 +12,6 @@ class User
     private string $password;
     private string $role;
 
-//    //Fonction qui vérifie si l'utilisateur est administrateur
-//    public function CheckAdminUser() : bool{
-//        if (isset($_SESSION["role"]) AND ($_SESSION["role"])){
-//            return true;
-//        } else return false;
-//    }
 //Fonction SQLAjout
     public function SQLAddUser(\PDO $bdd) : array{
         try{

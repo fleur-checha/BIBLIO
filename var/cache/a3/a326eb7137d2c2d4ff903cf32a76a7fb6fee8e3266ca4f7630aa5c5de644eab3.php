@@ -57,7 +57,7 @@ class __TwigTemplate_79ed7d1d3bcb910cf6442196a26450ab5b0874d037b43508737de17c3c5
     {
         $macros = $this->macros;
         // line 6
-        echo "    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForAccueil.css\">
+        echo "    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForBook.css\">
 ";
     }
 
@@ -106,7 +106,7 @@ class __TwigTemplate_79ed7d1d3bcb910cf6442196a26450ab5b0874d037b43508737de17c3c5
 {% block title %}Livre - {{ parent() }}{% endblock %}
 
 {% block css %}
-    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForAccueil.css\">
+    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForBook.css\">
 {% endblock %}
 
 {% block body %}

@@ -57,7 +57,7 @@ class __TwigTemplate_000c20f97b854713676982703c825709fc59d0717e5f696fdcd327963b1
     {
         $macros = $this->macros;
         // line 6
-        echo "    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForAccueil.css\">
+        echo "    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForBook.css\">
 ";
     }
 
@@ -66,39 +66,67 @@ class __TwigTemplate_000c20f97b854713676982703c825709fc59d0717e5f696fdcd327963b1
     {
         $macros = $this->macros;
         // line 11
-        echo "    <h1>Modification de : ";
+        echo "    <h1>Modification de \"";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 11), "html", null, true);
-        echo "</h1>
+        echo "\"</h1>
 
     <form name=\"UpdateLivre\" method=\"post\" action=\"?controller=Livre&action=UpdateBook&param=";
         // line 13
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "id", [], "any", false, false, false, 13), "html", null, true);
         echo "\">
-        <input id=\"Titre\" type=\"text\" name=\"titre\" placeholder=\"Titre\" value=\"";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 14), "html", null, true);
-        echo "\">
-        <input id=\"Auteur\" type=\"text\" name=\"auteur\" placeholder=\"Auteur\" value=\"";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "auteur", [], "any", false, false, false, 15), "html", null, true);
-        echo "\">
-        <input id=\"Editeur\" type=\"text\" name=\"editeur\" placeholder=\"Editeur\" value=\"";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "editeur", [], "any", false, false, false, 16), "html", null, true);
-        echo "\">
-        <input id=\"Nb_pages\" type=\"number\" name=\"nb_pages\" placeholder=\"Nombre de pages\" value=\"";
+        <fieldset>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Titre\" class=\"form-control\" type=\"text\" name=\"titre\" placeholder=\"Titre\" value=\"";
         // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "nb_pages", [], "any", false, false, false, 17), "html", null, true);
-        echo "\" >
-        <input id=\"Date_publication\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "date_publication", [], "any", false, false, false, 18), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 17), "html", null, true);
         echo "\">
-        <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value=\"";
-        // line 19
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Auteur\" class=\"form-control\" type=\"text\" name=\"auteur\" placeholder=\"Auteur\" value=\"";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "auteur", [], "any", false, false, false, 22), "html", null, true);
+        echo "\">
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Editeur\" class=\"form-control\" type=\"text\" name=\"editeur\" placeholder=\"Editeur\" value=\"";
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "editeur", [], "any", false, false, false, 27), "html", null, true);
+        echo "\">
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Nb_pages\" class=\"form-control\" type=\"number\" name=\"nb_pages\" placeholder=\"Nombre de pages\" value=\"";
+        // line 32
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "nb_pages", [], "any", false, false, false, 32), "html", null, true);
+        echo "\" >
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Date_publication\" class=\"form-control\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"";
+        // line 37
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "date_publication", [], "any", false, false, false, 37), "html", null, true);
+        echo "\">
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value=\"";
+        // line 42
         echo twig_escape_filter($this->env, ($context["livre_image"] ?? null), "html", null, true);
         echo "\">
-        <input type=\"submit\" value=\"Modifier\">
+                </div>
+            </div>
+
+
+
+        <input type=\"submit\" class=\"btn btn-primary m-2\" value=\"Modifier\">
     </form>
 ";
     }
@@ -115,7 +143,7 @@ class __TwigTemplate_000c20f97b854713676982703c825709fc59d0717e5f696fdcd327963b1
 
     public function getDebugInfo()
     {
-        return array (  99 => 19,  95 => 18,  91 => 17,  87 => 16,  83 => 15,  79 => 14,  75 => 13,  69 => 11,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
+        return array (  122 => 42,  114 => 37,  106 => 32,  98 => 27,  90 => 22,  82 => 17,  75 => 13,  69 => 11,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -125,21 +153,49 @@ class __TwigTemplate_000c20f97b854713676982703c825709fc59d0717e5f696fdcd327963b1
 {% block title %}Livre - {{ parent() }}{% endblock %}
 
 {% block css %}
-    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForAccueil.css\">
+    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForBook.css\">
 {% endblock %}
 
 {% block body %}
 {#    <h1>Modification de : <a href=\"?controller=Livre&action=UpdateBook&param={{ livre.id }}\">{{ livre.titre }}</a></h1>#}
-    <h1>Modification de : {{ livre.titre }}</h1>
+    <h1>Modification de \"{{ livre.titre }}\"</h1>
 
     <form name=\"UpdateLivre\" method=\"post\" action=\"?controller=Livre&action=UpdateBook&param={{ livre.id }}\">
-        <input id=\"Titre\" type=\"text\" name=\"titre\" placeholder=\"Titre\" value=\"{{ livre.titre }}\">
-        <input id=\"Auteur\" type=\"text\" name=\"auteur\" placeholder=\"Auteur\" value=\"{{ livre.auteur }}\">
-        <input id=\"Editeur\" type=\"text\" name=\"editeur\" placeholder=\"Editeur\" value=\"{{ livre.editeur }}\">
-        <input id=\"Nb_pages\" type=\"number\" name=\"nb_pages\" placeholder=\"Nombre de pages\" value=\"{{ livre.nb_pages }}\" >
-        <input id=\"Date_publication\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"{{ livre.date_publication}}\">
-        <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value=\"{{ livre_image}}\">
-        <input type=\"submit\" value=\"Modifier\">
+        <fieldset>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Titre\" class=\"form-control\" type=\"text\" name=\"titre\" placeholder=\"Titre\" value=\"{{ livre.titre }}\">
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Auteur\" class=\"form-control\" type=\"text\" name=\"auteur\" placeholder=\"Auteur\" value=\"{{ livre.auteur }}\">
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Editeur\" class=\"form-control\" type=\"text\" name=\"editeur\" placeholder=\"Editeur\" value=\"{{ livre.editeur }}\">
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Nb_pages\" class=\"form-control\" type=\"number\" name=\"nb_pages\" placeholder=\"Nombre de pages\" value=\"{{ livre.nb_pages }}\" >
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Date_publication\" class=\"form-control\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"{{ livre.date_publication}}\">
+                </div>
+            </div>
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                    <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value=\"{{ livre_image}}\">
+                </div>
+            </div>
+
+
+
+        <input type=\"submit\" class=\"btn btn-primary m-2\" value=\"Modifier\">
     </form>
 {% endblock %}
 

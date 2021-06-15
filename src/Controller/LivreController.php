@@ -12,8 +12,13 @@ class LivreController extends AbstractController
 
     public function index()
     {
+        $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
         //En cas de problème, on redirige vers l'accueil
-        echo "Accueil du site BIBLIOTHEQUE";
+        return $this->twig->render("accueil.html.twig",[
+
+        "isOnline" => isset($_SESSION['role']),
+        "session" => $session
+    ]);
     }
 
     public function List(){
@@ -26,7 +31,6 @@ class LivreController extends AbstractController
 
         $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
 
-
         return $this->twig->render("list.html.twig",[
             "livreList" => $livreList,
             "isOnline" => isset($_SESSION['role']),
@@ -38,23 +42,25 @@ class LivreController extends AbstractController
         $livre = new Livre();
         $livreList = $livre->SQLGetAll(BDD::getInstance());
 
+        $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
+
         return $this->twig->render("listAdmin.html.twig",[
-            "livreList" => $livreList
+            "livreList" => $livreList,
+            "isOnline" => isset($_SESSION['role']),
+            "session" => $session
         ]);
     }
 
-    public function GetOne($id){
-            $livre = new Livre();
-            $livreOne = $livre->SQLGetOne(BDD::getInstance(), $id);
+    public function GetOne($id)
+    {
+        $livre = new Livre();
+        $livreOne = $livre->SQLGetOne(BDD::getInstance(), $id);
 
-        return $this->twig->render("detail_livre.html.twig",[
+        return $this->twig->render("detail_livre.html.twig", [
             "livre" => $livreOne,
-            "session"=> (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0
+            "session" => (isset($_SESSION["role"]) && $_SESSION["role"] == 1) ? 1 : 0,
+            "isOnline" => isset($_SESSION['role']),
         ]);
-
-//            if (!$livre){
-//                header("location:/");
-//            }
     }
 
     public function AddBook(){
@@ -62,6 +68,7 @@ class LivreController extends AbstractController
 //        if (!$admin->CheckAdminUser()){
 //            header("location:/");
 //        }
+        $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
 
         if(isset($_POST["titre"]) && isset($_POST["auteur"]) && isset($_POST["editeur"]) && isset($_POST["nb_pages"]) && isset($_POST["date_publication"]) && isset($_POST["livre_image"])) {
             $livre = new Livre();
@@ -75,15 +82,15 @@ class LivreController extends AbstractController
             $response = $livre->SQLAddBook(BDD::getInstance());
             if ($response[0] == true){
                   header("location:/index.php?controller=Livre&action=List");
-//                header("location:/?controller=Livre&action=List");
             } else {
                 echo "Une erreur c'est produite : ${response}";
             }
-
         } else {
-            return $this->twig->render("AddBook.html.twig");
+            return $this->twig->render("AddBook.html.twig",[
+                    "session" => (isset($_SESSION["role"]) && $_SESSION["role"] == 1) ? 1 : 0,
+                    "isOnline" => isset($_SESSION['role']),
+                ]);
         }
-
     }
 
     public function UpdateBook($id){
@@ -91,6 +98,7 @@ class LivreController extends AbstractController
 //        if (!$admin->CheckAdminUser()){
 //            header("location:/");
 //        }
+        $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
         $livre = new Livre();
         if(isset($_POST["titre"]) && isset($_POST["auteur"]) && isset($_POST["editeur"]) && isset($_POST["nb_pages"]) && isset($_POST["date_publication"]) && isset($_POST["livre_image"])) {
 
@@ -111,10 +119,11 @@ class LivreController extends AbstractController
             $livre = $livre->SQLGetOne(BDD::getInstance(), $id);
 
             return $this->twig->render("updateBook.html.twig",[
-                "livre" => $livre
+                "livre" => $livre,
+                "session" => (isset($_SESSION["role"]) && $_SESSION["role"] == 1) ? 1 : 0,
+                "isOnline" => isset($_SESSION['role']),
             ]);
         }
-
     }
 
     public function DeleteBook($id){
@@ -130,6 +139,6 @@ class LivreController extends AbstractController
 
         } else {
              echo "Une erreur c'est produite : ${response[1]}";
-        }
-        }
-        }
+         }
+      }
+    }

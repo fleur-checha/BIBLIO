@@ -58,7 +58,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
     {
         $macros = $this->macros;
         // line 6
-        echo "    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForAccueil.css\">
+        echo "    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForBook.css\">
 ";
     }
 
@@ -83,7 +83,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 16), "html", null, true);
         echo "\">
         </div>
-        <div class=\"col-6\">
+        <div class=\"col-6\" >
         <p> Titre du livre : ";
         // line 19
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 19), "html", null, true);
@@ -109,11 +109,11 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
 ";
     }
 
-    // line 38
+    // line 28
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 39
+        // line 29
         echo "    <script src=\"/assets/js/detail_livre.js\"></script>
 ";
     }
@@ -130,7 +130,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
 
     public function getDebugInfo()
     {
-        return array (  117 => 39,  113 => 38,  105 => 23,  101 => 22,  97 => 21,  93 => 20,  89 => 19,  81 => 16,  73 => 12,  70 => 10,  66 => 9,  61 => 6,  57 => 5,  49 => 3,  38 => 1,);
+        return array (  117 => 29,  113 => 28,  105 => 23,  101 => 22,  97 => 21,  93 => 20,  89 => 19,  81 => 16,  73 => 12,  70 => 10,  66 => 9,  61 => 6,  57 => 5,  49 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -140,7 +140,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
 {% block title %}Livre - {{ parent() }}{% endblock %}
 
 {% block css %}
-    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForAccueil.css\">
+    <link rel=\"stylesheet\" href=\"/assets/css/mystyleForBook.css\">
 {% endblock %}
 
 {% block body %}
@@ -152,7 +152,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
         <div class=\"col-6\">
             <img src=\"/images/{{ livre.livre_image }}\" alt=\"Couverture du Livre {{ livre.titre }}\">
         </div>
-        <div class=\"col-6\">
+        <div class=\"col-6\" >
         <p> Titre du livre : {{ livre.titre }}</p>
         <p> Auteur : {{ livre.auteur }}</p>
         <p>Editeur : {{ livre.editeur }}</p>
@@ -160,16 +160,6 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
         <p>Date de publication : {{ livre.date_publication }} </p>
         </div>
 
-{#    <form name=\"Detail_Livre\" method=\"post\" action=\"?controller=Livre&action=deleteBook&param={{ livre.id }}\">#}
-{#        <input id=\"Titre\" type=\"text\" name=\"titre\" placeholder=\"Titre\" value=\"{{ livre.titre }}\"><br>#}
-{#        <input id=\"Auteur\" type=\"text\" name=\"auteur\" placeholder=\"Auteur\" value=\"{{ livre.auteur }}\"><br>#}
-{#        <input id=\"Editeur\" type=\"text\" name=\"editeur\" placeholder=\"Editeur\" value=\"{{ livre.editeur }}\"><br>#}
-{#        <input id=\"Nb_pages\" type=\"number\" name=\"nb_pages\" placeholder=\"Nombre de pages\" value=\"{{ livre.nb_pages }}\"><br>#}
-{#        <input id=\"Date_publication\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"{{ livre.date_publication }}\"><br>#}
-{#        <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value =\"{{ livre.livre_image }}\">#}
-{#        <button  onclick=\"deleteConfirm({{ livre.id }})\" id=\"deleteButton\">Supprimer</button>#}
-{#        <input type=\"submit\" value=\"modifier\">#}
-{#    </form>#}
 {% endblock %}
 
 {% block javascript %}

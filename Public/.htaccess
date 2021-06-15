@@ -1,4 +1,4 @@
-RewriteEngine On
+#RewriteEngine On
 #
 ##URL Rewriting pour la partie user
 #RewriteRule ^signin$ index.php?controller=User&action=AddUser

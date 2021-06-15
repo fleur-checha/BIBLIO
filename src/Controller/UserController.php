@@ -13,7 +13,7 @@ class UserController extends AbstractController
     public function index()
     {
         //En cas de problème, on redirige vers l'accueil
-        echo "Accueil du site BIBLIOTHEQUE";
+        return $this->twig->render("accueil.html.twig");
     }
 
     //Fonction Login
@@ -27,15 +27,11 @@ class UserController extends AbstractController
             $response = $val->SQLLoginUser(BDD::getInstance());
             if ($response[0]){
 //                echo $response[0];
-                echo $response[1];
+//                echo $response[1];
                 $_SESSION["mail"] = $val->getMail();
                 $_SESSION["id_user"] = $val->getIdUser();
                 $_SESSION["role"] = $val->getRole();
-                var_dump($_SESSION["role"]);
-                var_dump($_SESSION["mail"]);
-                var_dump($_SESSION["id_user"]);
 
-                die;
                 header("location:/");
 
             } else {
@@ -80,23 +76,6 @@ class UserController extends AbstractController
         }
 
         //Si l'utilisateur à envoyer le formulaire
-//        if (isset($_POST["mail"]) && isset($_POST["password"])) {
-//            //On défini le nom d'utilisateur et le mail
-//            $val = new User();
-//            $val->setMail($_POST["mail"]);
-//            $val->setPassword($_POST["password"]);
-//
-//            $response = $val->SQLAddUser(BDD::getInstance());
-//            if ($response[0]) {
-////                echo "Inscription réussi";
-//                header("location:/index.php?controller=Livre&action=List");
-//            } else {
-//            echo "Une erreur c'est produite : ${response}";
-//        }
-//    } else {
-//    return $this->twig->render("user/inscription.html.twig");
-//}
-//        }
         if (isset($_POST["mail"]) && isset($_POST["password"])) {
             //On défini le nom d'utilisateur et le mail
             $val = new User();
@@ -125,7 +104,8 @@ class UserController extends AbstractController
             $response = $val->SQLAddUser(BDD::getInstance());
             if ($response[0]) {
                 echo "Inscription réussi";
-                return $this->twig->render("list.html.twig");
+//                header("location:/");
+//                return $this->twig->render("accueil.html.twig");
             } else {
                 echo "Une erreur c'est produite : ${response}";
             }

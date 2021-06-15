@@ -3,7 +3,7 @@
 {% block title %}Livre - {{ parent() }}{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="/assets/css/mystyleForAccueil.css">
+    <link rel="stylesheet" href="/assets/css/mystyleForBook.css">
 {% endblock %}
 
 {% block body %}
@@ -11,8 +11,8 @@
     {% if livreList is defined %}
         <h1>Liste des Livres</h1>
         {% for book in livreList %}
-            <p>livre {{ book.titre }}</p>
-            <p>Auteur{{ book.auteur }}</p>
+            <p id="intitule">Livre  : {{ book.titre }}</p>
+            <p id=""intitule">Auteur  : {{ book.auteur }}</p>
             <button onclick="window.location.href= '?controller=Livre&action=getone&param={{ book.id }}'">Detail</button>
             <hr>
         {% endfor %}

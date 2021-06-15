@@ -68,9 +68,10 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
         <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
             <ul class=\"navbar-nav me-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link active\" href=\"#\">Accueil
-                        <span class=\"visually-hidden\">(current)</span>
-                    </a>
+                    <a class=\"nav-link active\" href=\"?controller=livre&action=index\">Accueil
+";
+        // line 27
+        echo "                    </a>
                 </li>
                 <li class=\"nav-item\">
                     ";
@@ -160,7 +161,7 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
 
     public function getDebugInfo()
     {
-        return array (  146 => 56,  140 => 51,  133 => 11,  127 => 9,  122 => 57,  120 => 56,  114 => 52,  112 => 51,  105 => 46,  103 => 45,  99 => 43,  95 => 41,  92 => 40,  88 => 35,  84 => 33,  80 => 31,  78 => 30,  56 => 11,  53 => 10,  51 => 9,  41 => 1,);
+        return array (  147 => 56,  141 => 51,  134 => 11,  128 => 9,  123 => 57,  121 => 56,  115 => 52,  113 => 51,  106 => 46,  104 => 45,  100 => 43,  96 => 41,  93 => 40,  89 => 35,  85 => 33,  81 => 31,  79 => 30,  74 => 27,  56 => 11,  53 => 10,  51 => 9,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -189,8 +190,8 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
         <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
             <ul class=\"navbar-nav me-auto\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link active\" href=\"#\">Accueil
-                        <span class=\"visually-hidden\">(current)</span>
+                    <a class=\"nav-link active\" href=\"?controller=livre&action=index\">Accueil
+{#                        <span class=\"visually-hidden\">(current)</span>#}
                     </a>
                 </li>
                 <li class=\"nav-item\">
