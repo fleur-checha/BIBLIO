@@ -3,4 +3,3 @@ function deleteDetailConfirm(id) {
         window.location.href = "/list.html.twig";
     }
 }
-© 2021 GitHub, Inc

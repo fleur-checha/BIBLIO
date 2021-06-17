@@ -142,11 +142,6 @@ class __TwigTemplate_45d27b8efe293066a9b0d5d7ea3ca749acb57612a557a23294b14513bbc
         </fieldset>
     </form>
 {% endblock %}
-
-{#    {% block javascript %}#}
-{#    <script src=\"/assets/js/detail_livre.js\"></script>#}
-{#    {% endblock %}#}
-
 ", "user/inscription.html.twig", "C:\\xampp2\\htdocs\\BIBLIO\\Templates\\user\\inscription.html.twig");
     }
 }

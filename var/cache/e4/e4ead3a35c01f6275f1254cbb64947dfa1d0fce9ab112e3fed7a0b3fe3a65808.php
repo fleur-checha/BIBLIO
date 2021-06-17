@@ -71,7 +71,7 @@ class __TwigTemplate_45a382651c82ec19159090557f0aaeee48b49c6af27e85b307b59116fbb
         // line 11
         if (array_key_exists("livreList", $context)) {
             // line 12
-            echo "        <h1>Liste des Livres</h1>
+            echo "        <h1 style=\"text-align: center; margin: 1em\">Liste des Livres</h1>
         ";
             // line 13
             $context['_parent'] = $context;
@@ -81,11 +81,11 @@ class __TwigTemplate_45a382651c82ec19159090557f0aaeee48b49c6af27e85b307b59116fbb
                 echo "            <p id=\"intitule\">Livre  : ";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "titre", [], "any", false, false, false, 14), "html", null, true);
                 echo "</p>
-            <p id=\"\"intitule\">Auteur  : ";
+            <p id=\"intitule\">Auteur  : ";
                 // line 15
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "auteur", [], "any", false, false, false, 15), "html", null, true);
                 echo "</p>
-            <button onclick=\"window.location.href= '?controller=Livre&action=getone&param=";
+            <button class=\"btn btn-info\" onclick=\"window.location.href= '?controller=Livre&action=getone&param=";
                 // line 16
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["book"], "id", [], "any", false, false, false, 16), "html", null, true);
                 echo "'\">Detail</button>
@@ -141,11 +141,11 @@ class __TwigTemplate_45a382651c82ec19159090557f0aaeee48b49c6af27e85b307b59116fbb
 {% block body %}
 
     {% if livreList is defined %}
-        <h1>Liste des Livres</h1>
+        <h1 style=\"text-align: center; margin: 1em\">Liste des Livres</h1>
         {% for book in livreList %}
             <p id=\"intitule\">Livre  : {{ book.titre }}</p>
-            <p id=\"\"intitule\">Auteur  : {{ book.auteur }}</p>
-            <button onclick=\"window.location.href= '?controller=Livre&action=getone&param={{ book.id }}'\">Detail</button>
+            <p id=\"intitule\">Auteur  : {{ book.auteur }}</p>
+            <button class=\"btn btn-info\" onclick=\"window.location.href= '?controller=Livre&action=getone&param={{ book.id }}'\">Detail</button>
             <hr>
         {% endfor %}
     {% else %}
@@ -153,126 +153,6 @@ class __TwigTemplate_45a382651c82ec19159090557f0aaeee48b49c6af27e85b307b59116fbb
         <h2>{{ Livre.AUTEUR }}</h2>
     {% endif %}
 
-{% endblock %}
-{#        <div class=\"container\">#}
-{#            <div class=\"row\">#}
-{#                <div class=\"col-6\">#}
-{#                    <img src=\"{{ movie.POSTER }}\" alt=\"Affiche du film {{ movie.NAME }}\">#}
-{#                </div>#}
-{#                <div class=\"col-6\">#}
-{#                    <iframe width=\"595\" height=\"446\"#}
-{#                            src=\"{{ movie.TRAILER }}?autoplay=1&mute=1\">#}
-{#                    </iframe>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#        <p>Date de sortie: {{ movie.RELEASE_DATE }}</p>#}
-{#        <p>{{ movie.SYNOPSIS }}</p>#}
-{#        <hr>#}
-{#        <table>#}
-{#            <tbody>#}
-{#            <tr>#}
-{#                <td>Note : {{ totalRate }}#}
-{#                    {% if totalRate == \"Non défini\" %}#}
-
-{#                    {% elseif totalRate >= 10 %}#}
-{#                        ⭐⭐⭐⭐⭐#}
-{#                    {% elseif totalRate >= 8 %}#}
-{#                        ⭐⭐⭐⭐#}
-{#                    {% elseif totalRate >= 6 %}#}
-{#                        ⭐⭐⭐#}
-{#                    {% elseif totalRate >= 4 %}#}
-{#                        ⭐⭐#}
-{#                    {% elseif totalRate >= 2 %}#}
-{#                        ⭐#}
-{#                    {% endif %}#}
-{#                </td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>Origine : {{ movie.ORIGIN }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>VO : {{ movie.VO }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>Acteurs : {{ movie.ACTORS }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>Réalisateur : {{ movie.DIRECTOR }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>Genre : {{ movie.GENRE }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>Production : {{ movie.PRODUCTION }}</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>Durée : {{ movie.RUNTIME }} minutes</td>#}
-{#            </tr>#}
-{#            <tr>#}
-{#                <td>Nomination : {{ movie.NOMINATION }}</td>#}
-{#            </tr>#}
-{#            </tbody>#}
-{#        </table>#}
-{#        <hr>#}
-
-{#        {% if infoMovieList is defined %}#}
-
-{#            {% set commentOK = 0 %}#}
-{#            {% for infoMovie in infoMovieList %}#}
-{#                {% if (ID_SESSION == infoMovie.ID_USER)  %}#}
-
-{#                    <h1>Liste des Commentaires</h1>#}
-
-{#                    <h4>Note : {{ infoMovie.RATE }}</h4>#}
-{#                    <p>{{ infoMovie.COMMENT }}</p>#}
-{#                    <button class=\"btn btn-success\" onclick=\"window.location.href='/infomovie/editcomment/{{ infoMovie.ID_INFO }}'\">Modifier</button>#}
-{#                    <button class=\"btn btn-danger\" onclick=\"deleteDetailConfirm({{ infoMovie.ID_INFO }})\" id=\"deleteButton\">Supprimer</button>#}
-{#                    {% set commentOK = 1 %}#}
-{#                {% endif %}#}
-
-{#            {% endfor %}#}
-
-{#            {% if commentOK == 0 and ID_SESSION != null%}#}
-{#                <h2>Ajouter un commentaire</h2>#}
-{#                <form name=\"addInfoMovie\" method=\"post\" action=\"/infomovie/addcomment/{{ movie.ID_MOVIE }}\">#}
-
-{#                    <input id=\"Rate\" type=\"number\" step=\"0.1\" min=\"0\" max=\"10\" name=\"Rate\" placeholder=\"Note\" required><br><br>#}
-{#                    <textarea id=\"Comment\" name=\"Comment\" placeholder=\"Commentaire\" rows=\"5\" cols=\"33\" required></textarea>#}
-{#                    <input type=\"checkbox\" id=\"Share\" name=\"Share\">#}
-{#                    <label for=\"Share\">actuellement prêté</label>#}
-{#                    <input type=\"checkbox\" id=\"To_See\" name=\"To_See\" >#}
-{#                    <label for=\"To_See\">A voir</label>#}
-{#                    <button class=\"btn btn-primary\" id=\"btnAdComment\" type=\"submit\">Envoyer</button><br><br>#}
-
-{#                </form>#}
-
-
-{#                {% if infoMovieList != false %}#}
-{#                    <h1>Liste des Commentaires</h1>#}
-{#                {% endif %}#}
-
-{#            {% endif %}#}
-
-{#            {% for infoMovie in infoMovieList %}#}
-{#                {% if (ID_SESSION != infoMovie.ID_USER)  %}#}
-{#                    <h4>Note : {{ infoMovie.RATE }}</h4>#}
-{#                    <p>{{ infoMovie.COMMENT }}</p>#}
-{#                    {% if (IS_ADMIN == 1) %}#}
-{#                        <button class=\"btn btn-danger\" onclick=\"deleteDetailConfirm({{ infoMovie.ID_INFO }})\" id=\"deleteButton\">Supprimer</button>#}
-{#                    {% endif %}#}
-{#                {% endif %}#}
-{#                <hr>#}
-{#            {% endfor %}#}
-{#        {% endif %}#}
-
-{#    {% endif %}#}
-{#{% endblock %}#}
-
-{#{% block javascript %}#}
-{#<script src=\"/assets/js/listMovie.js\"></script>#}
-{#<script src=\"/assets/js/listInfoMovie.js\"></script>#}
-{#{% endblock %}#}
-", "list.html.twig", "C:\\xampp2\\htdocs\\BIBLIO\\Templates\\list.html.twig");
+{% endblock %}", "list.html.twig", "C:\\xampp2\\htdocs\\BIBLIO\\Templates\\list.html.twig");
     }
 }

@@ -103,9 +103,9 @@ class UserController extends AbstractController
 
             $response = $val->SQLAddUser(BDD::getInstance());
             if ($response[0]) {
-                echo "Inscription réussi";
+//                echo "Inscription réussi";
 //                header("location:/");
-//                return $this->twig->render("accueil.html.twig");
+                return $this->twig->render("accueil.html.twig");
             } else {
                 echo "Une erreur c'est produite : ${response}";
             }

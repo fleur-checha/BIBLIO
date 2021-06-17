@@ -34,15 +34,12 @@
                     {% endif %}
                 </li>
             </ul>
-{#            <form class="d-flex">#}
-{#                <input class="form-control me-sm-2" type="text" placeholder="Login">#}
-{#                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>#}
+
                 {% if isOnline == false %}
                 <button class="btn btn-secondary my-2 my-sm-0" onclick="window.location.href= '/?controller=User&action=LoginUser'">Login</button>
                 {% else %}
                 <button class="btn btn-secondary my-2 my-sm-0" onclick="window.location.href= '/?controller=User&action=LogoutUser'">Logout</button>
                 {% endif %}
-            {#            </form>#}
         </div>
     </div>
 </nav>

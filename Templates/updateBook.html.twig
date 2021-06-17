@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-{#    <h1>Modification de : <a href="?controller=Livre&action=UpdateBook&param={{ livre.id }}">{{ livre.titre }}</a></h1>#}
+
     <h1>Modification de "{{ livre.titre }}"</h1>
 
     <form name="UpdateLivre" method="post" action="?controller=Livre&action=UpdateBook&param={{ livre.id }}">
@@ -39,11 +39,9 @@
             </div>
             <div class="form-group p-2">
                 <div class="col-lg-10">
-                    <input id="Livre_image" type="text" name="livre_image" placeholder="lien image" value="{{ livre_image}}">
+                    <input class="form-control" name="livre_image" type="file" id="Livre_image" >
                 </div>
             </div>
-
-
 
         <input type="submit" class="btn btn-primary m-2" value="Modifier">
     </form>

@@ -83,14 +83,11 @@ class __TwigTemplate_aeb9479776fae7e6d090bc172de7e6dff6bba7d836d4d63b2b5d59b9f12
         </fieldset>
         <fieldset>
             <div class=\"form-group\">
-                <label for=\"createLogin\" class=\"col-sm-2 col-form-label\">Pas encore inscrit?</label>
+                <label for=\"createLogin\" class=\"col-sm-2 col-form-label\">Pas encore inscrit? </label>
                 <div class=\"col-sm-10\">
-";
-        // line 30
-        echo "                    <button id=\"createLogin\" class=\"btn btn-primary disabled\" onclick=\"window.location.href= '?controller=user&action=adduser'\">Créer un login</button>
+                    <button id=\"createLogin\" class=\"btn btn-primary\" onclick=\"window.location.href= '?controller=User&action=adduser'\">Créer un login</button>
                 </div>
             </div>
-{
 ";
     }
 
@@ -106,7 +103,7 @@ class __TwigTemplate_aeb9479776fae7e6d090bc172de7e6dff6bba7d836d4d63b2b5d59b9f12
 
     public function getDebugInfo()
     {
-        return array (  90 => 30,  69 => 10,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
+        return array (  69 => 10,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -137,13 +134,11 @@ class __TwigTemplate_aeb9479776fae7e6d090bc172de7e6dff6bba7d836d4d63b2b5d59b9f12
         </fieldset>
         <fieldset>
             <div class=\"form-group\">
-                <label for=\"createLogin\" class=\"col-sm-2 col-form-label\">Pas encore inscrit?</label>
+                <label for=\"createLogin\" class=\"col-sm-2 col-form-label\">Pas encore inscrit? </label>
                 <div class=\"col-sm-10\">
-{#                    <input type=\"text\" readonly=\"\" class=\"form-control-plaintext\" id=\"staticEmail\" value=\"email@example.com\">#}
-                    <button id=\"createLogin\" class=\"btn btn-primary disabled\" onclick=\"window.location.href= '?controller=user&action=adduser'\">Créer un login</button>
+                    <button id=\"createLogin\" class=\"btn btn-primary\" onclick=\"window.location.href= '?controller=User&action=adduser'\">Créer un login</button>
                 </div>
             </div>
-{
 {% endblock %}
 ", "user/connexion.html.twig", "C:\\xampp2\\htdocs\\BIBLIO\\Templates\\user\\connexion.html.twig");
     }

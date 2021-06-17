@@ -64,10 +64,7 @@ class LivreController extends AbstractController
     }
 
     public function AddBook(){
-//        $admin = new User();
-//        if (!$admin->CheckAdminUser()){
-//            header("location:/");
-//        }
+//
         $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
 
         if(isset($_POST["titre"]) && isset($_POST["auteur"]) && isset($_POST["editeur"]) && isset($_POST["nb_pages"]) && isset($_POST["date_publication"]) && isset($_POST["livre_image"])) {
@@ -81,7 +78,7 @@ class LivreController extends AbstractController
 
             $response = $livre->SQLAddBook(BDD::getInstance());
             if ($response[0] == true){
-                  header("location:/index.php?controller=Livre&action=List");
+                  header("location:/index.php?controller=Livre&action=ListAdmin");
             } else {
                 echo "Une erreur c'est produite : ${response}";
             }
@@ -94,10 +91,7 @@ class LivreController extends AbstractController
     }
 
     public function UpdateBook($id){
-//        $admin = new User();
-//        if (!$admin->CheckAdminUser()){
-//            header("location:/");
-//        }
+//
         $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
         $livre = new Livre();
         if(isset($_POST["titre"]) && isset($_POST["auteur"]) && isset($_POST["editeur"]) && isset($_POST["nb_pages"]) && isset($_POST["date_publication"]) && isset($_POST["livre_image"])) {
@@ -111,7 +105,8 @@ class LivreController extends AbstractController
 
             $response = $livre->SQLUpdateBook(BDD::getInstance(), $id);
             if ($response[0]){
-                echo "$response[1]";
+//                echo "$response[1]";
+                header("location:/index.php?controller=Livre&action=ListAdmin");
             } else {
                 echo "Une erreur c'est produite : ${response[1]}";
             }

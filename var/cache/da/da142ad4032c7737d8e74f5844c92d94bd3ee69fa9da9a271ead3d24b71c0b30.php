@@ -95,11 +95,13 @@ class __TwigTemplate_7b701b92e9812455c473b035188b6ff23ea826a916b08505ccd3a312206
     <input id=\"Date_publication\" class=\"form-control\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\">
             </div>
         </div>
-        <div class=\"form-group p-2\">
-            <div class=\"col-lg-10\">
-    <input id=\"Livre_image\" class=\"form-control\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\">
-        </div>
-        </div>
+
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                <input class=\"form-control\" type=\"file\" name=\"livre_image\" id=\"formFile\">
+                </div>
+            </div>
+
     <input type=\"submit\" class=\"btn btn-primary m-2\" value=\"Ajouter\">
         </fieldset>
     </form>
@@ -161,11 +163,13 @@ class __TwigTemplate_7b701b92e9812455c473b035188b6ff23ea826a916b08505ccd3a312206
     <input id=\"Date_publication\" class=\"form-control\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\">
             </div>
         </div>
-        <div class=\"form-group p-2\">
-            <div class=\"col-lg-10\">
-    <input id=\"Livre_image\" class=\"form-control\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\">
-        </div>
-        </div>
+
+            <div class=\"form-group p-2\">
+                <div class=\"col-lg-10\">
+                <input class=\"form-control\" type=\"file\" name=\"livre_image\" id=\"formFile\">
+                </div>
+            </div>
+
     <input type=\"submit\" class=\"btn btn-primary m-2\" value=\"Ajouter\">
         </fieldset>
     </form>

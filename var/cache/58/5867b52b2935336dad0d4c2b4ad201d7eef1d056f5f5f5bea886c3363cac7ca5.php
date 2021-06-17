@@ -115,15 +115,13 @@ class __TwigTemplate_000c20f97b854713676982703c825709fc59d0717e5f696fdcd327963b1
         echo "\">
                 </div>
             </div>
-            <div class=\"form-group p-2\">
+";
+        // line 45
+        echo "            <div class=\"form-group p-2\">
                 <div class=\"col-lg-10\">
-                    <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value=\"";
-        // line 42
-        echo twig_escape_filter($this->env, ($context["livre_image"] ?? null), "html", null, true);
-        echo "\">
+                    <input class=\"form-control\" name=\"livre_image\" type=\"file\" id=\"Livre_image\" >
                 </div>
             </div>
-
 
 
         <input type=\"submit\" class=\"btn btn-primary m-2\" value=\"Modifier\">
@@ -143,7 +141,7 @@ class __TwigTemplate_000c20f97b854713676982703c825709fc59d0717e5f696fdcd327963b1
 
     public function getDebugInfo()
     {
-        return array (  122 => 42,  114 => 37,  106 => 32,  98 => 27,  90 => 22,  82 => 17,  75 => 13,  69 => 11,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
+        return array (  120 => 45,  114 => 37,  106 => 32,  98 => 27,  90 => 22,  82 => 17,  75 => 13,  69 => 11,  65 => 9,  60 => 6,  56 => 5,  48 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -187,12 +185,16 @@ class __TwigTemplate_000c20f97b854713676982703c825709fc59d0717e5f696fdcd327963b1
                     <input id=\"Date_publication\" class=\"form-control\" type=\"date\" name=\"date_publication\" placeholder=\"Date de Publication\" value=\"{{ livre.date_publication}}\">
                 </div>
             </div>
+{#            <div class=\"form-group p-2\">#}
+{#                <div class=\"col-lg-10\">#}
+{#                    <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value=\"{{ livre.livre_image}}\">#}
+{#                </div>#}
+{#            </div>#}
             <div class=\"form-group p-2\">
                 <div class=\"col-lg-10\">
-                    <input id=\"Livre_image\" type=\"text\" name=\"livre_image\" placeholder=\"lien image\" value=\"{{ livre_image}}\">
+                    <input class=\"form-control\" name=\"livre_image\" type=\"file\" id=\"Livre_image\" >
                 </div>
             </div>
-
 
 
         <input type=\"submit\" class=\"btn btn-primary m-2\" value=\"Modifier\">
