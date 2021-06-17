@@ -68,52 +68,51 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
         $macros = $this->macros;
         // line 10
         echo "
-";
-        // line 12
-        echo "    <h1>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 12), "html", null, true);
+    <h1 style=\"text-align: center; margin: 2em;\">";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 11), "html", null, true);
         echo "</h1>
 <div class=\"container\">
     <div class=\"row\">
         <div class=\"col-6\">
             <img src=\"/images/";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "livre_image", [], "any", false, false, false, 16), "html", null, true);
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "livre_image", [], "any", false, false, false, 15), "html", null, true);
         echo "\" alt=\"Couverture du Livre ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 16), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 15), "html", null, true);
         echo "\">
         </div>
         <div class=\"col-6\" >
         <p> Titre du livre : ";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 19), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "titre", [], "any", false, false, false, 18), "html", null, true);
         echo "</p>
         <p> Auteur : ";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "auteur", [], "any", false, false, false, 20), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "auteur", [], "any", false, false, false, 19), "html", null, true);
         echo "</p>
         <p>Editeur : ";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "editeur", [], "any", false, false, false, 21), "html", null, true);
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "editeur", [], "any", false, false, false, 20), "html", null, true);
         echo "</p>
         <p>Nb_pages : ";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "nb_pages", [], "any", false, false, false, 22), "html", null, true);
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "nb_pages", [], "any", false, false, false, 21), "html", null, true);
         echo "</p>
         <p>Date de publication : ";
-        // line 23
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "date_publication", [], "any", false, false, false, 23), "html", null, true);
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["livre"] ?? null), "date_publication", [], "any", false, false, false, 22), "html", null, true);
         echo " </p>
         </div>
 
 ";
     }
 
-    // line 28
+    // line 27
     public function block_javascript($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 29
+        // line 28
         echo "    <script src=\"/assets/js/detail_livre.js\"></script>
 ";
     }
@@ -130,7 +129,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
 
     public function getDebugInfo()
     {
-        return array (  117 => 29,  113 => 28,  105 => 23,  101 => 22,  97 => 21,  93 => 20,  89 => 19,  81 => 16,  73 => 12,  70 => 10,  66 => 9,  61 => 6,  57 => 5,  49 => 3,  38 => 1,);
+        return array (  116 => 28,  112 => 27,  104 => 22,  100 => 21,  96 => 20,  92 => 19,  88 => 18,  80 => 15,  73 => 11,  70 => 10,  66 => 9,  61 => 6,  57 => 5,  49 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -145,8 +144,7 @@ class __TwigTemplate_4a6e1ce5931866ddb24a64b0373780087617303dbb52437f5a10027b885
 
 {% block body %}
 
-{#    <h1>Detail du livre :<a href=\"?controller=Livre&action=getOne&param={{ livre.id }}\">{{ livre.titre }}</a></h1>#}
-    <h1>{{ livre.titre }}</h1>
+    <h1 style=\"text-align: center; margin: 2em;\">{{ livre.titre }}</h1>
 <div class=\"container\">
     <div class=\"row\">
         <div class=\"col-6\">

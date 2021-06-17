@@ -88,38 +88,36 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
         // line 35
         echo "                </li>
             </ul>
-";
-        // line 40
-        echo "                ";
+
+                ";
+        // line 38
         if ((($context["isOnline"] ?? null) == false)) {
-            // line 41
+            // line 39
             echo "                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '/?controller=User&action=LoginUser'\">Login</button>
                 ";
         } else {
-            // line 43
+            // line 41
             echo "                <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '/?controller=User&action=LogoutUser'\">Logout</button>
                 ";
         }
-        // line 45
-        echo "            ";
-        // line 46
+        // line 43
         echo "        </div>
     </div>
 </nav>
 <div class=\"container\">
 
     ";
-        // line 51
+        // line 48
         $this->displayBlock('body', $context, $blocks);
-        // line 52
+        // line 49
         echo "
 </div>
 
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script>
 ";
-        // line 56
+        // line 53
         $this->displayBlock('script', $context, $blocks);
-        // line 57
+        // line 54
         echo "</body>
 </html>";
     }
@@ -137,13 +135,13 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
         echo "BIBLIOTHEQUE ";
     }
 
-    // line 51
+    // line 48
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
     }
 
-    // line 56
+    // line 53
     public function block_script($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -161,7 +159,7 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
 
     public function getDebugInfo()
     {
-        return array (  147 => 56,  141 => 51,  134 => 11,  128 => 9,  123 => 57,  121 => 56,  115 => 52,  113 => 51,  106 => 46,  104 => 45,  100 => 43,  96 => 41,  93 => 40,  89 => 35,  85 => 33,  81 => 31,  79 => 30,  74 => 27,  56 => 11,  53 => 10,  51 => 9,  41 => 1,);
+        return array (  145 => 53,  139 => 48,  132 => 11,  126 => 9,  121 => 54,  119 => 53,  113 => 49,  111 => 48,  104 => 43,  100 => 41,  96 => 39,  94 => 38,  89 => 35,  85 => 33,  81 => 31,  79 => 30,  74 => 27,  56 => 11,  53 => 10,  51 => 9,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -202,15 +200,12 @@ class __TwigTemplate_0d8d7361ffab39321e996d2c8515fbcb17337a62c1219a8895344210feb
                     {% endif %}
                 </li>
             </ul>
-{#            <form class=\"d-flex\">#}
-{#                <input class=\"form-control me-sm-2\" type=\"text\" placeholder=\"Login\">#}
-{#                <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Login</button>#}
+
                 {% if isOnline == false %}
                 <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '/?controller=User&action=LoginUser'\">Login</button>
                 {% else %}
                 <button class=\"btn btn-secondary my-2 my-sm-0\" onclick=\"window.location.href= '/?controller=User&action=LogoutUser'\">Logout</button>
                 {% endif %}
-            {#            </form>#}
         </div>
     </div>
 </nav>

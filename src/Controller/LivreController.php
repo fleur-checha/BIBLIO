@@ -44,6 +44,10 @@ class LivreController extends AbstractController
 
         $session = (isset($_SESSION["role"]) && $_SESSION["role"]==1)? 1 : 0;
 
+       // pour éviter d'accéder à listadmin via l'URL
+        if ($session==0){
+            header("location:/");
+        }
         return $this->twig->render("listAdmin.html.twig",[
             "livreList" => $livreList,
             "isOnline" => isset($_SESSION['role']),
